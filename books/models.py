@@ -13,6 +13,9 @@ class Category(BaseModel):
 
 class Publisher(BaseModel):
     name = models.CharField(max_length=256)
+
+    def __str__(self) -> str:
+        return self.name
     
 
 class Book(BaseModel):
