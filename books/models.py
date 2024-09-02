@@ -20,7 +20,7 @@ class Publisher(BaseModel):
 
 class Book(BaseModel):
     title = models.CharField(max_length=256)
-    category = models.ForeignKey(Category,on_delete=models.CASCADE)
+    categories = models.ManyToManyField(Category,related_name="books")
     author = models.CharField(max_length=256)
     publisher = models.ForeignKey(Publisher,on_delete=models.CASCADE)
     pub_year = models.IntegerField(verbose_name="Nashr qilingan yili")
